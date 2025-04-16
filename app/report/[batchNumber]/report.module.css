@@ -1,0 +1,447 @@
+/* Update color variables */
+:root {
+  --primary-blue: #2563EB;
+  --primary-light: #DBEAFE;
+  --primary-border: #93C5FD;
+  --primary-dark: #1E40AF;
+  --bg-light: #EFF6FF;
+  --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  --card-border: #000000;
+}
+
+.container {
+  min-height: 100vh;
+  background-color: white;
+  padding: 1rem;
+  position: relative;
+}
+
+.container::before {
+  display: none;
+}
+
+/* Make sure content is above the background */
+.header, .supplyChainTracker, .main {
+  position: relative;
+  z-index: 1;
+}
+
+/* Add a subtle blue gradient to the header */
+.header {
+  background: linear-gradient(135deg, #1E40AF, #2563EB);
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.backButton {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: background-color 0.2s;
+  font-weight: 500;
+}
+
+.backButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.supportLink {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: background-color 0.2s;
+}
+
+.supportLink:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.supportIcon {
+  font-size: 1.25rem;
+}
+
+/* Update existing logo styles */
+.logo {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+/* Update existing batchInfo styles */
+.batchInfo {
+  text-align: right;
+}
+
+.batchInfo h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.timestamp {
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+
+.supplyChainTracker {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+  padding: 0.75rem 0.5rem;
+  background: white;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: none;
+  height: 60px;
+}
+
+.trackerStage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  flex: 1;
+  z-index: 2;
+}
+
+.trackerIcon {
+  width: auto;
+  height: auto;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-blue);
+  margin-bottom: 0.25rem;
+  font-size: 1.25rem;
+  position: relative;
+  font-weight: bold;
+}
+
+.trackerLine {
+  position: absolute;
+  top: 15px;
+  width: calc(100% - 20px);
+  height: 2px;
+  background: #E2E8F0;
+  left: 60%;
+  z-index: 1;
+}
+
+.trackerTitle {
+  font-size: 0.65rem;
+  color: #64748B;
+  text-align: center;
+  margin-top: 0.25rem;
+  font-weight: 700;
+}
+
+.trackerStage.active .trackerIcon {
+  background: transparent;
+  color: var(--primary-blue);
+  transform: scale(1.2);
+}
+
+.trackerStage.active .trackerTitle {
+  color: var(--primary-blue);
+  font-weight: 800;
+}
+
+.trackerStage.completed .trackerIcon {
+  background: transparent;
+  color: #22C55E;
+}
+
+.trackerStage.completed .trackerLine {
+  background: var(--primary-blue);
+}
+
+.main {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.stageCards {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.stageCard {
+  flex: 1;
+  max-width: 320px;
+  background: white;
+  border-radius: 10px;
+  border: 3px solid var(--card-border);
+  padding: 1.25rem;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  min-height: 450px;
+}
+
+.stageCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+.stageCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(90deg, var(--primary-blue), #4F946C);
+}
+
+.stagePhase {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: var(--bg-light);
+  color: var(--primary-dark);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  border: 2px solid var(--primary-blue);
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.stageHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.stageIcon {
+  width: 40px;
+  height: 40px;
+  background: #4F946C;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.25rem;
+  border: 3px solid var(--card-border);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stageInfo h2 {
+  margin: 0;
+  color: #000000;
+  font-size: 1.1rem;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+
+.location {
+  color: #4B5563;
+  font-size: 0.8rem;
+  margin-top: 0.4rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.section {
+  margin-top: 1.25rem;
+  padding-top: 0.75rem;
+  border-top: 2px dashed #E5E7EB;
+}
+
+.section h3 {
+  color: var(--primary-dark);
+  font-size: 0.85rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  padding-left: 1.25rem;
+  position: relative;
+  letter-spacing: 0.75px;
+}
+
+.section h3::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234F946C'%3E%3Cpath d='M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z'/%3E%3C/svg%3E");
+  background-size: contain;
+}
+
+.summaryGrid, .checksGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.summaryItem, .checkItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.label {
+  color: #111827;
+  font-size: 0.8rem;
+  line-height: 1.3;
+  padding-right: 0.5rem;
+  font-weight: 700;
+}
+
+.value {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  line-height: 1.3;
+}
+
+.value strong {
+  color: var(--primary-dark);
+  background: var(--bg-light);
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  border: 2px solid var(--primary-border);
+  font-weight: 900;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.unit, .note {
+  font-size: 0.8rem;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.navButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-blue);
+  background: white;
+  color: var(--primary-blue);
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.navButton:hover:not(:disabled) {
+  background: var(--primary-blue);
+  color: white;
+  transform: scale(1.05);
+}
+
+.navButton:disabled {
+  border-color: #E2E8F0;
+  color: #E2E8F0;
+  cursor: not-allowed;
+}
+
+/* Add animations for stage transitions */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.stageCard {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Progress line animation */
+.trackerStage.completed + .trackerStage .trackerLine {
+  background: linear-gradient(to right, #4F946C 50%, #E2E8F0 50%);
+  background-size: 200% 100%;
+  animation: progressLine 0.5s ease-out forwards;
+}
+
+@keyframes progressLine {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+.summaryLinkContainer {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.summaryLinkButton {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: var(--primary-blue);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  border: 2px solid var(--primary-dark);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.summaryLinkButton:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+} 

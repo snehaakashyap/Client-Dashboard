@@ -1,0 +1,233 @@
+/* General styling */
+.container {
+  min-height: 100vh;
+  background-color: #F8FAFC;
+  padding: 1rem;
+}
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+}
+
+.header {
+  margin-bottom: 1.5rem;
+}
+
+.backLink {
+  text-decoration: none;
+  color: #2563EB;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.backLink:hover {
+  color: #1D4ED8;
+}
+
+.reportTitle {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1E40AF;
+  margin: 0;
+}
+
+/* Report Meta Info */
+.reportMeta {
+  background: white;
+  border-radius: 10px;
+  border: 2px solid #E5E7EB;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.metaItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.metaLabel {
+  font-size: 0.8rem;
+  color: #6B7280;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+}
+
+.metaValue {
+  font-size: 1rem;
+  color: #111827;
+  font-weight: 600;
+}
+
+.complianceBadge {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.compliant {
+  background-color: #D1FAE5;
+  color: #065F46;
+  border: 1px solid #6EE7B7;
+}
+
+.nonCompliant {
+  background-color: #FEE2E2;
+  color: #991B1B;
+  border: 1px solid #FCA5A5;
+}
+
+/* Test Sections */
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1E40AF;
+  margin: 2rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #BFDBFE;
+}
+
+.testCard {
+  background: white;
+  border-radius: 10px;
+  border: 2px solid #E5E7EB;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.testHeader {
+  background-color: #EFF6FF;
+  padding: 1rem 1.5rem;
+  font-weight: 700;
+  color: #1E3A8A;
+  border-bottom: 2px solid #DBEAFE;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.testHeader h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.statusBadge {
+  font-size: 0.85rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.statusPass {
+  background-color: #D1FAE5;
+  color: #065F46;
+}
+
+.statusFail {
+  background-color: #FEE2E2;
+  color: #991B1B;
+}
+
+.statusPending {
+  background-color: #FEF3C7;
+  color: #92400E;
+}
+
+.testBody {
+  padding: 1.5rem;
+}
+
+.testResultsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.resultItem {
+  border: 1px solid #F3F4F6;
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: #F9FAFB;
+}
+
+.resultLabel {
+  font-size: 0.8rem;
+  color: #6B7280;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.resultValue {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.resultUnit {
+  font-size: 0.8rem;
+  color: #4B5563;
+  margin-left: 0.25rem;
+}
+
+.resultNote {
+  font-size: 0.75rem;
+  color: #6B7280;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.overallScoreSection {
+  background: linear-gradient(135deg, #1E40AF, #3B82F6);
+  color: white;
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.scoreValue {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.scoreMax {
+  font-size: 1.5rem;
+  opacity: 0.7;
+}
+
+.scoreLabel {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  opacity: 0.9;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .reportMeta {
+    grid-template-columns: 1fr;
+  }
+
+  .testResultsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .reportTitle {
+    font-size: 1.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.25rem;
+  }
+} 

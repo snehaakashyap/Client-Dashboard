@@ -1,0 +1,457 @@
+.container {
+  min-height: 100vh;
+  background-color: white;
+  padding: 1rem;
+  position: relative;
+}
+
+.main {
+  max-width: 1400px;
+  margin: 0 auto 2rem;
+  padding: 0;
+}
+
+.downloadSection {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.downloadButton, .labReportButton {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.downloadButton {
+  background-color: #2563EB;
+  color: white;
+  border: 2px solid #1E40AF;
+}
+
+.downloadButton:hover {
+  background-color: #1E40AF;
+  transform: translateY(-2px);
+}
+
+.labReportButton {
+  background-color: white;
+  color: #2563EB;
+  border: 2px solid #2563EB;
+  text-decoration: none;
+}
+
+.labReportButton:hover {
+  background-color: #EFF6FF;
+  transform: translateY(-2px);
+}
+
+/* Section styling */
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #1E40AF;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #BFDBFE;
+}
+
+.infoCard {
+  background: white;
+  border-radius: 10px;
+  border: 3px solid black;
+  padding: 1.5rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  position: relative;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.infoLabel {
+  font-weight: 700;
+  color: #111827;
+  flex: 0 0 40%;
+}
+
+.infoValue {
+  font-weight: 500;
+  color: #4B5563;
+  text-align: right;
+}
+
+/* Timeline styling */
+.timelineSection {
+  margin-bottom: 2rem;
+}
+
+.timelineContainer {
+  display: flex;
+  position: relative;
+  margin: 2rem 0;
+}
+
+.timelineItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  flex: 1;
+  z-index: 2;
+}
+
+.timelineIcon {
+  width: 36px;
+  height: 36px;
+  background: white;
+  border: 2px solid #94A3B8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #94A3B8;
+  position: relative;
+  z-index: 3;
+}
+
+.timelineConnector {
+  position: absolute;
+  top: 18px;
+  width: 100%;
+  height: 2px;
+  background: #E2E8F0;
+  left: 50%;
+  z-index: 1;
+}
+
+.timelineContent {
+  text-align: center;
+  max-width: 120px;
+}
+
+.timelineStage {
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  color: #4B5563;
+}
+
+.timelineDate {
+  font-size: 0.7rem;
+  color: #6B7280;
+}
+
+.completed .timelineIcon {
+  background: #22C55E;
+  border-color: #22C55E;
+  color: white;
+}
+
+.completed .timelineStage {
+  color: #22C55E;
+}
+
+.current .timelineIcon {
+  background: white;
+  border-color: #2563EB;
+  color: #2563EB;
+  font-size: 1.5rem;
+}
+
+.current .timelineStage {
+  color: #2563EB;
+  font-weight: 800;
+}
+
+/* Two column layout */
+.twoColumnLayout {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.twoColumnLayout > section {
+  flex: 1;
+}
+
+/* Status badges */
+.statusBadge {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.statusInTransit {
+  background-color: #DBEAFE;
+  color: #2563EB;
+  border: 1px solid #60A5FA;
+}
+
+/* Product card */
+.productCard {
+  border-radius: 8px;
+  padding: 1rem;
+  background: #F8FAFC;
+  margin-bottom: 1rem;
+}
+
+.productName {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin: 0 0 0.25rem 0;
+  color: #1E3A8A;
+}
+
+.productVariety {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: #6B7280;
+  margin: 0 0 1rem 0;
+}
+
+.productDetails {
+  margin-top: 0.5rem;
+}
+
+/* Certifications */
+.certifications {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #F1F5F9;
+}
+
+.certBadge {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  background: #EFF6FF;
+  color: #2563EB;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border: 1px solid #BFDBFE;
+}
+
+/* Quality score */
+.qualityScoreContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.qualityScore {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 0.25rem;
+}
+
+.scoreValue {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #2563EB;
+  line-height: 1;
+}
+
+.scoreMax {
+  font-size: 1.5rem;
+  color: #94A3B8;
+}
+
+.qualityLabel {
+  font-size: 0.9rem;
+  color: #6B7280;
+  font-weight: 500;
+}
+
+/* Compliance status */
+.complianceStatus {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.complianceBadge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.compliant {
+  background-color: #DCFCE7;
+  color: #15803D;
+  border: 1px solid #86EFAC;
+}
+
+/* Tests badges */
+.testsPerformed {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #F1F5F9;
+}
+
+.testsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.testBadge {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  background: #F0F9FF;
+  color: #0369A1;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border: 1px solid #BAE6FD;
+}
+
+/* Tracking info */
+.trackingHeader {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.currentLocation {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2563EB;
+  margin-top: 0.5rem;
+}
+
+.addressBox {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #F1F5F9;
+}
+
+.deliveryAddress {
+  background: #F8FAFC;
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-top: 0.5rem;
+  white-space: pre-line;
+  font-size: 0.9rem;
+  border: 1px solid #E2E8F0;
+}
+
+/* Quality metrics grid */
+.qualityGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.qualityMetric {
+  background: #F8FAFC;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #E2E8F0;
+}
+
+.metricLabel {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #4B5563;
+  margin-bottom: 0.5rem;
+}
+
+.metricValue {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2563EB;
+}
+
+/* Notes section */
+.notesList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.noteItem {
+  padding: 0.75rem;
+  background: #F8FAFC;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+  border-left: 3px solid #2563EB;
+  font-size: 0.9rem;
+}
+
+.addNoteContainer {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.addNoteInput {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #E2E8F0;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  resize: vertical;
+}
+
+.addNoteButton {
+  padding: 0 1.5rem;
+  background: #2563EB;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.addNoteButton:hover {
+  background: #1E40AF;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1024px) {
+  .twoColumnLayout {
+    flex-direction: column;
+  }
+  
+  .qualityGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .timelineStage {
+    font-size: 0.7rem;
+  }
+  
+  .timelineDate {
+    font-size: 0.6rem;
+  }
+  
+  .infoLabel, .infoValue {
+    font-size: 0.9rem;
+  }
+} 
