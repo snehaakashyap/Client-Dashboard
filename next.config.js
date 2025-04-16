@@ -11,6 +11,9 @@ const nextConfig = {
     'react-resizable-panels'
   ],
   
+  // Vercel specific output configuration
+  output: process.env.VERCEL ? 'export' : undefined,
+  
   // Allow older peer dependencies
   experimental: {
     esmExternals: 'loose'
