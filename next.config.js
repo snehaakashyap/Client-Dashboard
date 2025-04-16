@@ -3,9 +3,16 @@ const nextConfig = {
   // Basic optimizations for Vercel deployment
   swcMinify: true,
   reactStrictMode: true,
-  // Ensure Vercel can bundle the app correctly
+  
+  // Ensure compatibility with React 18
+  transpilePackages: [
+    'react-day-picker',
+    'recharts',
+    'react-resizable-panels'
+  ],
+  
+  // Allow older peer dependencies
   experimental: {
-    // This allows Next.js to resolve dependencies more effectively
     esmExternals: 'loose'
   }
 }

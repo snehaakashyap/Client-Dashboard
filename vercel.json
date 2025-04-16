@@ -14,5 +14,6 @@
   ],
   "github": {
     "silent": true
-  }
+  },
+  "installCommand": "npm install --legacy-peer-deps"
 } 
